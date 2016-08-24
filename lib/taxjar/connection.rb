@@ -4,24 +4,18 @@ module Taxjar
   class Connection < Taxjar::Base
     extend ModelAttribute
     def initialize
-      @valid = true
-      @exists = true
+      @valid = false
     end
 
-    attribute :valid,          :boolean
-    attribute :exists,         :boolean
-    # attribute :vies_available, :boolean
+    attr_accessor :valid,                 :boolean
+    # attribute :success_count        :integer
+    # attribute :error_count          :integer
+    # attribute :opened_at            :datetime
+    # attribute :requests_remaining   :integer
 
-    # class ViesResponse < Validation
-    #   extend ModelAttribute
-    #
-    #   attribute :vat_number,   :string
-    #   attribute :request_date, :string
-    #   attribute :valid,        :boolean
-    #   attribute :name,         :string
-    #   attribute :address,      :string
+    # def time_alive
+    #   self.opened_at - Date.now
     # end
-    #
-    # object_attr_reader ViesResponse, :vies_response
+
   end
 end
