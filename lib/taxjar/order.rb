@@ -3,7 +3,7 @@ require 'taxjar/base'
 module Taxjar
   class Order < Taxjar::Base
     extend ModelAttribute
-    
+
     attribute :transaction_id,   :string
     attribute :user_id,          :integer
     attribute :transaction_date, :string

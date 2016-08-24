@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'yard'
+gem 'pry'
 
 group :test do
   gem 'rspec', '~>3'

@@ -10,7 +10,6 @@ describe Taxjar::API::Order do
       before do
         stub_get('/v2/transactions/orders').to_return(body: fixture('orders.json'),
                                                       headers: {content_type: 'application/json; charset=utf-8'})
-
       end
 
       it 'requests the right resource' do
@@ -31,7 +30,6 @@ describe Taxjar::API::Order do
         stub_get('/v2/transactions/orders?from_transaction_date=2015/05/01&to_transaction_date=2015/05/31').
           to_return(body: fixture('orders.json'),
                     headers: {content_type: 'application/json; charset=utf-8'})
-
       end
 
       it 'requests the right resource' do
@@ -142,7 +140,7 @@ describe Taxjar::API::Order do
       expect(order.shipping).to eq(1.5)
       expect(order.sales_tax).to eq(0.95)
     end
-    
+
     it 'allows access to line_items' do
       order = @client.create_order(@order)
       expect(order.line_items[0].id).to eq(1)
@@ -198,7 +196,7 @@ describe Taxjar::API::Order do
       expect(order.shipping).to eq(1.5)
       expect(order.sales_tax).to eq(0.95)
     end
-    
+
     it 'allows access to line_items' do
       order = @client.update_order(@order)
       expect(order.line_items[0].id).to eq(1)
@@ -242,7 +240,7 @@ describe Taxjar::API::Order do
       expect(order.shipping).to eq(1.5)
       expect(order.sales_tax).to eq(0.95)
     end
-    
+
     it 'allows access to line items' do
       order = @client.delete_order('123')
       expect(order.line_items[0].id).to eq(1)
